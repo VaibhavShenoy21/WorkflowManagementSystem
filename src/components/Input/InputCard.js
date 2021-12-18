@@ -33,7 +33,7 @@ export default function InputCard({setOpen, listId, type}) {
         setTitle(e.target.value);
     };
     const handleBtnConfirm =()=>{
-        if (type == 'card'){
+        if (type === 'card'){
         addMoreCard(title, listId);
         setTitle('');
         setOpen(false);
@@ -54,12 +54,12 @@ export default function InputCard({setOpen, listId, type}) {
                     className: classes.input,
                 }}
                 value = {title}
-                placeholder={type == 'card'?"Enter the title of this Card..":"Enter List title.."}
+                placeholder={type === 'card'?"Enter the title of this Card..":"Enter List title.."}
                 />
             </Paper>
             </div>
             <div className={classes.confirm}>
-                <Button className={classes.btnConfirm} onClick={handleBtnConfirm}>{type == "card"?"Add Card":"Add List"}</Button>
+                <Button className={classes.btnConfirm} onClick={handleBtnConfirm}>{type === "card"?"Add Card":"Add List"}</Button>
                 <IconButton onClick= {()=> setOpen(false)}>
                     <ClearIcon />
                 </IconButton>

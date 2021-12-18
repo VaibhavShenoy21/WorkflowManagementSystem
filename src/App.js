@@ -4,9 +4,8 @@ import List from './components/List/List';
 import store from './utils/store';
 import StoreApi from './utils/storeApi';
 import InputContainer from './components/Input/InputContainer';
-import { Card, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { Draggable } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
 
 const useStyle = makeStyles((theme)=>({
@@ -91,7 +90,7 @@ export default function App() {
 
     const sourceList = data.lists[source.droppableId];
     const destinationList = data.lists[destination.droppableId];
-    const draggingCard = sourceList.cards.filter((card)=> card.id == draggableId)[0];
+    const draggingCard = sourceList.cards.filter((card)=> card.id === draggableId)[0];
 
     if(source.droppableId === destination.droppableId){
       sourceList.cards.splice(source.index, 1);

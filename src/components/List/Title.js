@@ -2,7 +2,6 @@ import { InputBase, Typography } from '@material-ui/core'
 import React, { useContext, useState } from 'react'
 import { makeStyles } from '@material-ui/core';
 import { MoreHoriz } from '@material-ui/icons';
-import { flexbox } from '@mui/system';
 import storeApi from '../../utils/storeApi';
 
 const useStyle = makeStyles((theme)=>({

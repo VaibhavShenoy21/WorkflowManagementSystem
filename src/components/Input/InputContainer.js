@@ -30,7 +30,7 @@ export default function InputContainer({listId, type}) {
             </Collapse>
             <Collapse in={!open}>
             <Paper
-            className={classes.addCard} elevation={0} onClick={()=> setOpen(!open)}><Typography>{type == 'card'? '+ Add a Card':'+ Add another List'}</Typography></Paper>
+            className={classes.addCard} elevation={0} onClick={()=> setOpen(!open)}><Typography>{type === 'card'? '+ Add a Card':'+ Add another List'}</Typography></Paper>
             </Collapse>
         </div>
     )
