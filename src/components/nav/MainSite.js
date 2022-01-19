@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
-import Wrapper from './components/wrapper'
+import Wrapper from '../wrapper'
 import { makeStyles } from '@material-ui/core';
-import Navigation from './components/nav/Navigation';
+import Navigation from './Navigation';
 
 const useStyle = makeStyles((theme)=>({
 

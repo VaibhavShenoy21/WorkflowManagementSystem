@@ -1,4 +1,4 @@
-import { Drawer, Grow } from '@material-ui/core'
+import { Button, Drawer, fade, Grow } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
 import colors from '../../utils/color';
@@ -26,12 +26,24 @@ const useStyles = makeStyles((theme)=>({
         borderRadius:'9px',
         marginBottom:theme.spacing(2),
     },
+    backbtn:{
+        background:'#5AAC44',
+        color: '#fff',
+        "&:hover":{
+            background: fade('#5AAC44', 0.75),
+        },
+        justifyContent: 'space-around',
+        margin: theme.spacing(1,1,1,20),
+    },
 }))
 export default function SideMenu({setOpenSideMenu ,openSideMenu , setBackgroundImage}) {
     const classes = useStyles();
     const[openOptionColor, setOpenOptionColor]= useState(false);
-    const[openOptionImage, setOpenOptionImage]= useState(false);
+    const[openOptionImage, setOpenOptionImage]= useState(true);
     const[images,setImage] = useState([]);
+    const handleBackConfirm = (e)=> {
+        setOpenSideMenu(false);
+    };
 
     const getListOfImage =async () =>{
         const listOfImages =  await getImages();
@@ -96,6 +108,7 @@ export default function SideMenu({setOpenSideMenu ,openSideMenu , setBackgroundI
                                 })}
                     </div>
                     </Grow>}
+                    <Button className={classes.backbtn} onClick={handleBackConfirm}>Back</Button>
                 </div>
             </Drawer>
         </div>
